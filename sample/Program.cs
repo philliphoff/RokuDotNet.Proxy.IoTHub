@@ -19,7 +19,7 @@ namespace RokuDotNet.Harness
 
         static async Task MainAsync(string[] args)
         {
-            string deviceName = Environment.GetEnvironmentVariable("IOTHUB_DEVICE_ID");
+            string deviceId = Environment.GetEnvironmentVariable("IOTHUB_DEVICE_ID");
             string deviceConnectionString = Environment.GetEnvironmentVariable("IOTHUB_DEVICE_CONNECTION_STRING");
             string serviceConnectionString = Environment.GetEnvironmentVariable("IOTHUB_SERVICE_CONNECTION_STRING");
 
@@ -42,7 +42,7 @@ namespace RokuDotNet.Harness
                 {
                     var rpcClient = new IoTHubRokuRpcClient(serviceConnectionString);
 
-                    using (var deviceClient = new ProxyRokuDevice("test", rpcClient))
+                    using (var deviceClient = new ProxyRokuDevice(deviceId, rpcClient))
                     {
                         var result = await deviceClient.Query.GetTvChannelsAsync(cts.Token);
 
@@ -56,9 +56,6 @@ namespace RokuDotNet.Harness
                 {
                     await server.StopListeningAsync(cts.Token);
                 }
-
-                Console.WriteLine("Press <ENTER> to quit...");
-                Console.ReadLine();
             }
         }
     }
