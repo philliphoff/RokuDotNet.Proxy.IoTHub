@@ -1,2 +1,2 @@
 # RokuDotNet.Proxy.Amqp
-.NET AMQP Proxy Client for Roku Devices
+.NET Azure IoT Hub Proxy Client for Roku Devices
