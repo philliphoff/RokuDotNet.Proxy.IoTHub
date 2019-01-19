@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <AssemblyVersion Condition="'$(AssemblyVersion)' == ''">0.1</AssemblyVersion>
+    <AssemblyVersion Condition="'$(AssemblyVersion)' == ''">0.2</AssemblyVersion>
     <PackageVersion Condition="'$(PackageVersion)' == ''">$(AssemblyVersion).0</PackageVersion>
     <AssemblyFileVersion Condition="'$(AssemblyFileVersion)' == ''">$(PackageVersion)</AssemblyFileVersion>
   </PropertyGroup>
@@ -33,7 +33,7 @@
       <PackageReference Include="Microsoft.Azure.Devices" Version="1.17.1" />
       <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.18.1" />
       <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-      <PackageReference Include="RokuDotNet.Proxy" Version="0.1.0" />
+      <PackageReference Include="RokuDotNet.Proxy" Version="0.2.0" />
   </ItemGroup>
 
 </Project>
